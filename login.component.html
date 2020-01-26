@@ -1,0 +1,71 @@
+
+  <div class="body">
+    <header>
+      <div class="overlay"></div>
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="assets/Mt_Baker.mp4" type="video/mp4">
+      </video>
+      <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+    
+         
+          <div class="test123">
+            <router-outlet></router-outlet> 
+          </div>
+  
+          <div *ngIf="canShow" class="loginWhole"> 
+            <form name="form"  #f="ngForm" novalidate (ngSubmit)="f.form.valid && onSubmit()">
+              <div class="container FormGroup">
+                     <div class="form-check">
+                            <input class="form-check-input" type="radio" [(ngModel)]="Student"name="typeUser" id="Student" value="Student"/>
+                            <label class="form-check-label" for="exampleRadios2">Student</label>
+                      </div>
+                   
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" [(ngModel)]="Trainer"name="typeUser" id="Trainer" value="Trainer"/>
+                        <label class="form-check-label" for="exampleRadios2">Trainer</label>
+                      </div>
+
+                      {{showError}}
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Email Address</label>
+                                  <input type="text" class="form-control"
+                                    [(ngModel)]="Email" #email="ngModel" 
+                                     [ngClass]="{'is-invalid':f.submitted && email.invalid}" name="Email" placeholder="Enter Email" required email />
+                                        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                                          <div *ngIf="email.errors.required">Email Name is required</div>
+                                          <div *ngIf="email.errors.email">Email must be a valid email Address</div>
+                               </div>
+                            </div>
+                            <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" [(ngModel)]="Password" #password="ngModel" placeholder="Enter Password"
+                                    [ngClass]="{'is-invalid':f.submitted && password.invalid}" name="password" required minlength="6"/>
+                                    <div *ngIf="f.submitted &&  password.invalid" class="invalid-feedback">
+                                      <div *ngIf="password.errors.required">Password is required</div>
+                                      <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                                    </div>
+                            </div>
+                            <div class="form-check">
+                              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                              <label class="form-check-label" for="exampleCheck1">Terms</label>
+                            </div>
+               <div class="button">
+                  <button type="submit" class="btn btn-primary" >SignIn</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <button type="button" class="btn btn-primary" (click)="onRegister()">Register</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <button type="reset" class="btn btn-primary">Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <button type="menu" class="btn btn-primary" (click)="onForget()">Forget Password</button>
+                </div>
+              </div>
+              </form>
+          </div>
+         </div>
+         </div> 
+          </header>
+      </div>
+
+ 
+  
+ 
+
+  

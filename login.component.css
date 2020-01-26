@@ -1,0 +1,124 @@
+
+.test123{
+ 
+  position: relative;
+  min-width:100%;
+  max-height: 100%;
+  animation-delay: 3000ms;
+  }
+.body{
+
+    position: -ms-page;
+    animation-delay: 3000ms;
+    padding:13px;
+    padding-top: -90%;
+    color:rgb(163, 24, 24) ;
+
+}
+
+
+
+.form-check{
+
+width:450px;
+background-color:rgb(238, 235, 241) ;
+color: rgb(78, 71, 71);
+font-size: 20px;
+text-align: left;
+
+}
+.form-group{
+
+    width:400px;
+    background-color:rgb(233, 233, 233) ;
+    align-items: left;
+    text-align: left;
+    color: rgb(99, 69, 69);
+    margin:0px auto;
+    padding:10px;
+    font-size: 20px;
+    font-display: inherit;
+    } 
+    
+ .loginWhole{
+  
+        position: absolute;
+        left: 27%;
+        top:25%;
+        width: 600px;
+        height: 500px;
+        animation-delay: 3000ms;
+        align-content: left;
+        margin:0px auto;
+        padding:13px;
+        background-color:rgb(233, 233, 233) ;
+    }  
+
+    /* login button working style */
+
+    .button{
+
+       text-align: center;
+
+
+    }
+    .btn.btn-primary{
+       padding:4px;
+        
+    }  
+    .overlay{
+          height: 60%;
+          width: 100%;
+
+
+    }
+    /* this is for vedio  */
+    header {
+      position: relative;
+      background-color: rgb(10, 10, 10);
+      height: 84vh;
+      min-height: 25rem;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    header video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 0;
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+    }
+    
+    header .container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    header .overlay {
+      position: absolute;
+      top: .89%;
+      left: 0;
+      right:0;
+      height: 100%;
+      width: 100%;
+      background-color: black;
+      opacity: 0.2;
+      z-index: 1;
+    }
+    
+    @media (pointer: coarse) and (hover: none) {
+      header {
+        background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+      }
+      header video {
+        display: none;
+      }
+    } 
