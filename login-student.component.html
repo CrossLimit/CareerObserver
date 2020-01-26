@@ -1,0 +1,42 @@
+
+  <div class="body1">
+   <div class ="loginmodule">
+     <app-login-header></app-login-header>
+     <div class="div1">
+       <form class="form-group">
+
+          <!-- <label for="sel1">Select subject:
+                    <select  id="subjects" name="subjects" [(ngModel)]="subjects" >
+                    <option value="Java">Java</option>    
+                    <option value="Spring">Spring</option>    
+                    </select>
+          </label> -->
+<form class="form-group">
+  <label for="sel1">Subject
+          <select [(ngModel)]="selectedLevel1"name="selectedLevel1">
+            <option *ngFor="let item of data1" [ngValue]="item">{{item.name}}</option>
+          </select>
+        </label>
+
+        <label for="sel2">Test
+          <select [(ngModel)]="selectedLevel2"name="selectedLevel2" (change)="selected()">
+            <option *ngFor="let item of data2" [ngValue]="item">{{item.name}}</option>
+          </select>
+        </label>
+         
+   </form>
+<!-- 
+          <label for="sel2">Select Testno:
+                     <select id="sel2" name="startTests" [(ngModel)]="test" value="test" >
+                        <option value="1">Test1</option>
+                        <option value="2">Test2</option>
+                        <option value="3">Test3</option>
+                    </select>
+          </label> -->
+          <button type="submit" class="btn btn-primary" (click)='onSub()'>Start Test</button> 
+         
+      </form>
+    </div> 
+
+  </div>
+</div>
