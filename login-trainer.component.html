@@ -1,0 +1,21 @@
+
+<div class ="loginModule">
+    <app-login-header></app-login-header>
+    <div class ="TestSchedule">
+    <form   class="form-group" (ngSubmit)="putTest()">
+      <div class="form-group">
+        <label for="sel1"class ="key1">Select subject:</label>
+        <select id="subject" name="subject" [(ngModel)]="subject">
+          <option>Java</option>
+          <option>Spring</option>
+         
+        </select>
+    
+        <label for="sel2" class="key2">select Testno:</label>
+              <input type="text" [(ngModel)]="test" name ="test" id ="test"/>&nbsp;&nbsp;&nbsp;&nbsp; {{show}}
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+

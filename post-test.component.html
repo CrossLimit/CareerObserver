@@ -1,0 +1,143 @@
+ <!-- <app-login-header></app-login-header>
+<div class="containermain" *ngIf="canShow1"><h1>{{show}}</h1></div>
+<div class="containermain" *ngIf="canShow">
+  <form name="form" #f="ngForm" novalidate>
+    <div class="container FormGroup">
+          <label class="Question">Question-No:
+            <input type="text"[(ngModel)]="questionNo" name="questionNo" id="questionNo" maxlength="2"size="2"/>
+          </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          {{show}}
+          <label class="Question">Question:</label>
+            <textarea type="textarea" [(ngModel)]="option1" name="option2" rows="" columns="10" id="option1"size="100"/>
+            
+             <textarea id="Question" [(ngModel)]="Question" name="Question"placeholder="Write Question Here.." 
+             style="height:100px;width:80%"></textarea>
+          <br/>
+     <div class="options">
+          <label class="options">
+             
+          Option a) 
+            <input type="textarea" [(ngModel)]="Option1" name="option1" rows="3" columns="10" size="102"
+                  class="form-control" #option1="ngModel" [ngClass]="{'is-invalid':f.submitted &&
+                   option1.invalid}" name="option1" placeholder="Enter First Option" required option1 />
+                   <div *ngIf="f.submitted && option1.invalid" class="invalid-feedback">
+                    <div *ngIf="option1.errors.required">Option is required</div>
+                    <div *ngIf="option1.errors.option1">Option must be Validated</div>
+          </div>
+          </label> 
+          <br/> 
+           <label class="options">
+            Option b)    
+              <input type="textarea" [(ngModel)]="Option2" name="option2" rows="3" columns="10" size="102"
+              class="form-control" #option2="ngModel" [ngClass]="{'is-invalid':f.submitted &&
+                    option2.invalid}" name="Option2" placeholder="Option2 required" required option2/>
+                    <div *ngIf="f.submitted && option2.invalid" class="invalid-feedback">
+                      <div *ngIf="option2.errors.required">Option2 is required</div>
+                      <div *ngIf="option2.errors.option2">option2 must be a valid </div>
+            </div>
+            </label>
+            <br/>
+
+            <label class="options">
+            Option c)   
+              <input type="textarea" [(ngModel)]="Option3" name="option3" rows="3" columns="10" size="102"
+              class="form-control"[(ngModel)]="option3" #option3="ngModel" [ngClass]="{'is-invalid':f.submitted &&
+                    option3.invalid}" name="option3" placeholder="Enter option3" required option3 />
+                    <div *ngIf="f.submitted && option3.invalid" class="invalid-feedback">
+                      <div *ngIf="option3.errors.required">option3 is required</div>
+                      <div *ngIf="option3.errors.option3">option3 must be a valid email Address</div>
+            </div>
+            </label>
+            <br/>
+
+            <label class="options">
+              Option d)   
+              <input type="textarea" [(ngModel)]="Option4" name="option4" rows="3" columns="10" size="102"
+              class="form-control"[(ngModel)]="option4" #option4="ngModel" [ngClass]="{'is-invalid':f.submitted &&
+                    option4.invalid}" name="option4" placeholder="option4 Email" required option4 />
+                    <div *ngIf="f.submitted && option4.invalid" class="invalid-feedback">
+                      <div *ngIf="option4.errors.required">option4 Name is required</div>
+                      <div *ngIf="option4.errors.option4">option4 must be a valid</div>
+            </div>
+            </label>
+            <br/> 
+
+            <label class="options">
+          Correct Option:    
+            <input type="textarea" [(ngModel)]="OptionCorrect" name="optionCorrect" rows="3" columns="10" size="102"
+            class="form-control"[(ngModel)]="optionCorrect" #optionCorrect="ngModel" [ngClass]="{'is-invalid':f.submitted &&
+            optionCorrect.invalid}" name="optionCorrect" placeholder="Enter optionCorrect" required optionCorrect />
+                   <div *ngIf="f.submitted && optionCorrect.invalid" class="invalid-feedback">
+                    <div *ngIf="optionCorrect.errors.required">optionCorrect is required</div>
+                    <div *ngIf="optionCorrect.errors.optionCorrect">optionCorrect must be a valid </div>
+          </div>
+          </label>
+          <br/>
+      
+      
+        <div class="button1">
+          <button type="button"class="btn btn-primary" name="onSubmit"(ngSubmit)="onSubmit()" >Submit Question</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="reset"class="btn btn-primary" name="onNext" (click)="onNext()" >Next Question</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="submit" name="submitTest" class="btn btn-primary"(ngSubmit)="submitTest()">Submit Test</button>
+         </div>
+      </div>
+      </div>
+      </form>
+    </div>  -->
+    <app-login-header></app-login-header>
+<div class="containermain" *ngIf="canShow1"><h1>{{show}}</h1></div>
+<div class="containermain" *ngIf="canShow">
+ <form class="form-group" >
+         
+          <label class="Question">Question-No:
+            <input type="text"[(ngModel)]="questionno " name="questionNo" id="questionNo" maxlength="2"size="2"/>
+          </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+          {{show}}
+          <label class="Question">Question:</label>
+            <!-- <textarea type="" [(ngModel)]="option1" name="option2" rows="" columns="10" id="option1"size="100"/>
+             -->
+             <textarea id="Question" [(ngModel)]="question" name="Question"placeholder="Write Question Here.." style="height:100px;width:80%"></textarea>
+          
+      
+          <br/>
+      <div class="options">
+          <label class="options">
+          Option a) 
+            <input type="text" [(ngModel)]="option1" name="option1" rows="3" columns="10" id="option1" size="102"/>
+          </label>
+          <br/>
+          <label class="options">
+          Option b)    
+            <input type="textarea" [(ngModel)]="option2" name="option2" rows="3" columns="10" id="option2"size="102"/>
+          </label>
+          <br/>
+          <label class="options">
+          Option c)   
+            <input type="textarea" [(ngModel)]="option3" name="option3" rows="3" columns="10" id="option3"size="102"/>
+          </label>
+          <br/>
+
+          <label class="options">
+            Option d)   
+            <input type="textarea" [(ngModel)]="option4" name="option3" rows="3" columns="10" id="option4"size="102"/>
+          </label>
+          <br/>
+
+            <label class="options">
+          Correct Option:    
+            <input type="textarea" [(ngModel)]="optioncorrect" name="optioncorrect" rows="3" columns="10" id="optionCorrect"size="102"/>
+          </label>
+          <br/>
+        </div>
+       
+        <div class="button1">
+          <button type="button"class="btn btn-primary" name="onSubmit"(click)="onSubmit()" >Submit Question</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="reset"class="btn btn-primary" name="onNext" (click)="onNext()" >Next Question</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="submit" name="submitTest" class="btn btn-primary"(click)="submitTest()">Submit Test</button>
+         
+        </div>
+      </form>
+      </div>
+  
