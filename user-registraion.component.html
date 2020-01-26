@@ -1,0 +1,63 @@
+
+<div class="body">
+
+<!-- <form (ngSubmit)="onSubmit()" #f="form"> -->
+  <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+  <div class="container FormGroup">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <!-- <label for="email"><b>Email &nbsp;&nbsp;<span>  {{show}}</span></b></label>  -->
+    <!-- <input type="text" placeholder="Enter Email" [(ngModel)]="Email"name="Email" required> -->
+    
+    <input type="text" class="form-control" [(ngModel)]="Email" #email="ngModel" 
+    [ngClass]="{'is-invalid':f.submitted && email.invalid}" name="Email" placeholder="Enter Email" required Email />
+            <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+              <div *ngIf="email.errors.required">Email Name is required</div>
+              <div *ngIf="email.errors.Email">Email must be a valid email Address</div>
+            </div>
+    {{show}}  
+    
+      
+      <input type="password" class="form-control" [(ngModel)]="Password" #password="ngModel" placeholder="Enter Password"
+      [ngClass]="{'is-invalid':f.submitted && password.invalid}" name="password" required minlength="6"/>
+      <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+        <div *ngIf="password.errors.required">Password is required</div>
+        <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+      </div>
+    
+    
+
+    <!-- <label for="psw"><b>Password</b></label> -->
+    <!-- <input type="password" placeholder="Enter Password" [(ngModel)]="Password"name="Password" required> -->
+    
+
+
+    <!-- <label for="psw-repeat"><b>Repeat Password</b></label> -->
+    <!-- <input type="password" placeholder="Repeat Password" [(ngModel)]="RepeatPassword"name="RepeatPassword" required> -->
+
+    <input type="password" class="form-control" [(ngModel)]="RepeatPassword" #repeatpassword="ngModel" placeholder="Enter Password"
+   
+    [ngClass]="{'is-invalid':f.submitted && repeatpassword.invalid}" name="repeatpassword" required minlength="6"/>
+    <div *ngIf="f.submitted && repeatpassword.invalid" class="invalid-feedback">
+      <div *ngIf="repeatpassword.errors.required">Repeat Password is required</div>
+      <div *ngIf="repeatpassword.errors.minlength">Match With the Password </div>
+    </div>
+
+    <hr>
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+    <button type="submit" class="registerbtn"  >Register</button>
+  </div>
+  
+  <div class="container signin">
+    <p>Already have an account? <a href="/Login">Sign in</a>.</p>
+  </div>
+   
+  
+</form>
+  
+
+</div >
+

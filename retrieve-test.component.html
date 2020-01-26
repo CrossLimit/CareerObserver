@@ -1,0 +1,99 @@
+<!-- <p>Retrieving the test for you</p>
+<meta charset="UTF-8">
+<style>
+div#test{ border:#000 1px solid; padding:10px 40px 40px 40px; }
+</style>
+<script>
+var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct = 0;
+var questions = [
+    [ "What is 10 + 4?", "12", "14", "16", "B" ],
+	[ "What is 20 - 9?", "7", "13", "11", "C" ],
+	[ "What is 7 x 3?", "21", "24", "25", "A" ],
+	[ "What is 8 / 2?", "10", "2", "4", "C" ]
+];
+function _(x){
+	return document.getElementById(x);
+}
+function renderQuestion(){
+	test = _("test");
+	if(pos >= questions.length){
+		test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+		_("test_status").innerHTML = "Test Completed";
+		pos = 0;
+		correct = 0;
+		return false;
+	}
+	_("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+	question = questions[pos][0];
+	chA = questions[pos][1];
+	chB = questions[pos][2];
+	chC = questions[pos][3];
+	test.innerHTML = "<h3>"+question+"</h3>";
+	test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+	test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br><br>";
+	test.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
+}
+function checkAnswer(){
+	choices = document.getElementsByName("choices");
+	for(var i=0; i<choices.length; i++){
+		if(choices[i].checked){
+			choice = choices[i].value;
+		}
+	}
+	if(choice == questions[pos][4]){
+		correct++;
+	}
+	pos++;
+	renderQuestion();
+}
+window.addEventListener("load", renderQuestion, false);
+</script>
+
+<h2 id="test_status"></h2>
+<div id="test"></div> -->
+
+
+
+<div class="containermain">
+	<div class="header">
+	<app-login-header></app-login-header><br/><br/><br/><br/>
+	</div>
+<div *ngIf="candnf" style="color:red">{{dnf}}</div>	
+	<div class="question">
+	<h5>
+		<p class="question">Question-No:
+			{{questionNo}}&nbsp;&nbsp;&nbsp;&nbsp;  {{question}} </p> 
+	</h5></div>
+	<div class="startQuestion">
+		
+		<p class="options">
+			 <input type="radio" [(ngModel)]="a" name="a" id="a" value="a"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			 {{option1}} 
+		 </p>
+		 <p class="options">
+			<input type="radio"name="a" [(ngModel)]="b"id="b" value="b" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			{{option2}} 
+		</p>
+		<p>
+		 <input type="radio" name="a" [(ngModel)]="c" id="c" value="c"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		 {{option3}} 
+		</p>
+		<p>
+			<input type="radio"name="a"[(ngModel)]="d" id="d" value="d"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				{{option4}}
+		</p>
+		
+	</div>
+	
+	
+	
+	  <div class="button1">
+		<button type="button" value="ViewAnswer" (click)="ViewAnswer()">View Answer</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<button type="button" value="<<Previous"  (click)="previous()"> <<Previous </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<button type="submit" value="submit" (click)="result()">Submit Test</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<button type="button" value="Next>>" (click)="next()">Next>></button>
+		<div *ngIf='checkAnswer1' class="res"><br/><h5>{{correctans}}</h5></div>
+</div>
+
+	</div>
